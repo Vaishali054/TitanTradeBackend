@@ -61,7 +61,7 @@ export const generatePortfolio = async (req, res) => {
 
       for (const stock of userStocks) {
         const companyDetails = await Companies.findOne({
-          Company_Id: stock.Company_Id,
+          _id: stock.Company_Id,
         });
 
         const totalValue = stock.numberOfStocks * companyDetails.current_Price;
